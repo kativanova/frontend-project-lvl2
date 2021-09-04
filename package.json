@@ -1,0 +1,29 @@
+{
+  "name": "frontend-project-lvl2",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "A study package that provide utils to work with files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kativanova/frontend-project-lvl2.git"
+  },
+  "author": "Katya Ivanova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kativanova/frontend-project-lvl2/issues"
+  },
+  "homepage": "https://github.com/kativanova/frontend-project-lvl2#readme",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.2",
+    "prettier": "^2.3.2"
+  },
+  "dependencies": {
+    "commander": "^8.1.0"
+  }
+}
