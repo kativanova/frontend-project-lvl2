@@ -27,6 +27,7 @@
     "prettier": "^2.3.2"
   },
   "dependencies": {
-    "commander": "^8.1.0"
+    "commander": "^8.1.0",
+    "lodash": "^4.17.21"
   }
 }
