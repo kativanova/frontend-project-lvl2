@@ -3,6 +3,9 @@
   "type": "module",
   "version": "1.0.0",
   "description": "A study package that provide utils to work with files",
+  "bin": {
+    "gendiff": "bin/gendiff.js"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
