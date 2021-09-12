@@ -8,3 +8,5 @@ test:
 	npm test
 test-watch:
 	npx jest --watch
+test-coverage:
+	npx jest --coverage
