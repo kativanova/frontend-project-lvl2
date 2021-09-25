@@ -17,12 +17,12 @@ test('JSON files', () => {
   expect(genDiff(file1, file2)).toEqual(result);
 });
 
-/* test('YAML files', () => {
+test('YAML files', () => {
   const file1 = getFixturePath('yml/file1.yml');
   const file2 = getFixturePath('yml/file2.yml');
   const result = readFile('results.txt');
   expect(genDiff(file1, file2)).toEqual(result);
-}); */
+});
 
 test('YAML files 2', () => {
   const file1 = getFixturePath('yml/file1.yaml');

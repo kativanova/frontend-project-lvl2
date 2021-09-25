@@ -3,7 +3,7 @@ const getStrForValue = (value, indent, depth) => {
     return value;
   }
   const levelIndent = indent.repeat(depth) + indent.repeat(depth - 1);
-  const breakIndent = indent.repeat(depth);
+  const breakIndent = indent.repeat(depth - 1) + indent.repeat(depth - 2);
   const stings = Object.entries(value).map(([key, val]) => `${levelIndent}  ${key}: ${getStrForValue(val, indent, depth + 1)}`);
   return `{\n${stings.join('\n')}\n  ${breakIndent}}`;
 };
@@ -33,9 +33,8 @@ const stylish = (diffObj) => {
     const strForChildren = node.children.map((child) => iter(child, depth + 1));
 
     const levelIndent = indent.repeat(node.level) + indent.repeat(node.level - 1);
-    const breakIndent = indent.repeat(node.level - 1);
 
-    return `${levelIndent}  ${node.key}: {\n${strForChildren.join('\n')}\n  ${breakIndent}}`;
+    return `${levelIndent}  ${node.key}: {\n${strForChildren.join('\n')}\n  ${levelIndent}}`;
   };
 
   const strForChildren = diffObj.children.map((child) => iter(child, 0));
