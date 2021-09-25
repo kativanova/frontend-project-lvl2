@@ -1,7 +1,7 @@
 import { test, expect } from '@jest/globals';
 import diffObject from '../src/diffObject.js';
 
-/* test('common case', () => {
+test('common case', () => {
   const object1 = {
     common: {
       setting1: 'Value 1',
@@ -89,4 +89,4 @@ import diffObject from '../src/diffObject.js';
     ],
   };
   expect(diffObject(object1, object2)).toEqual(expected);
-}); */
+});

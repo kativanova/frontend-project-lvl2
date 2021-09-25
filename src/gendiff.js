@@ -4,7 +4,7 @@ import parce from './parsers.js';
 import diffObj from './diffObject.js';
 import stylish from './formatters.js';
 
-const genDiff = (filepath1, filepath2, format) => {
+const genDiff = (filepath1, filepath2, format = 'stylish') => {
   try {
     const file1 = fs.readFileSync(filepath1, 'utf8');
     const file2 = fs.readFileSync(filepath2, 'utf8');
