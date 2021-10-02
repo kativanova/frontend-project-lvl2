@@ -7,6 +7,8 @@ export default (diff, format) => {
       return stylish(diff);
     case 'plain':
       return plain(diff);
+    case 'json':
+      return JSON.stringify(diff.children);
     default:
       return {};
   }
