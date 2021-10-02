@@ -1,5 +1,5 @@
 {
-  "name": "frontend-project-lvl2",
+  "name": "@hexlet/code",
   "type": "module",
   "version": "1.0.0",
   "description": "A study package that provide utils to work with files",
