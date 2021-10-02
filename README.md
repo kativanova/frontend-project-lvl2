@@ -6,3 +6,4 @@ Examples of usage:
 1. https://asciinema.org/a/2u5vCCrV8tjY71qVQ9zdvngp4
 2. https://asciinema.org/a/5thVYAeOLtHPsl6vHkdubFBrr
 3. https://asciinema.org/a/JnqsHuYsU0bfQvrh4gT0jq7IL
+4. https://asciinema.org/a/KOlopPSMnTzesi05l4mvZKUqM

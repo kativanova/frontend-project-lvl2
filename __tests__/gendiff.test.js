@@ -30,3 +30,10 @@ test('YAML files 2', () => {
   const result = readFile('results.txt');
   expect(genDiff(file1, file2)).toEqual(result);
 });
+
+test('JSON files plain result', () => {
+  const file1 = getFixturePath('json/file1.json');
+  const file2 = getFixturePath('json/file2.json');
+  const result = readFile('plain_results.txt');
+  expect(genDiff(file1, file2, 'plain')).toEqual(result);
+});

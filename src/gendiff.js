@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import path from 'path';
 import parce from './parsers.js';
 import diffObj from './diffObject.js';
-import stylish from './formatters.js';
+import formatter from './formatters/index.js';
 
 const genDiff = (filepath1, filepath2, format = 'stylish') => {
   try {
@@ -14,11 +14,7 @@ const genDiff = (filepath1, filepath2, format = 'stylish') => {
 
     const diff = diffObj(obj1, obj2);
 
-    switch (format) {
-      case 'stylish':
-        return stylish(diff);
-      default:
-    }
+    return formatter(diff, format);
   } catch (err) {
     console.log(err);
   }

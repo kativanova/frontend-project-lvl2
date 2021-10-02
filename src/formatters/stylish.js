@@ -1,3 +1,4 @@
+// as each diff value may itself be an object, we need to proccess it recursively
 const getStrForValue = (value, indent, depth) => {
   if (typeof (value) !== 'object' || value === null) {
     return value;
@@ -27,9 +28,12 @@ const getLinesForDiff = (node, indent) => {
 const stylish = (diffObj) => {
   const indent = '  ';
   const iter = (node, depth) => {
+    // non-recursive value means that the value of a key was changed
+    // we will not fall here only if the value of a key in both objects is an object
     if (node.type !== 'recursive') {
       return getLinesForDiff(node, indent);
     }
+
     const strForChildren = node.children.map((child) => iter(child, depth + 1));
 
     const levelIndent = indent.repeat(node.level) + indent.repeat(node.level - 1);
