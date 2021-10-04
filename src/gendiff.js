@@ -6,7 +6,6 @@ import formatter from './formatters/index.js';
 
 const genDiff = (filepath1, filepath2, format = 'stylish') => {
   try {
-    console.log(filepath1);
     const file1 = fs.readFileSync(filepath1, 'utf8');
     const file2 = fs.readFileSync(filepath2, 'utf8');
 

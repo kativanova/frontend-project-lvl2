@@ -11,35 +11,34 @@ const getFixturePath = (filename) => path.join(__dirname, '../__fixtures__/', fi
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
 test.each([
-  ['json/file1.json', 'json/file2.json'],
-  ['yml/file1.yml', 'yml/file2.yml'],
-  ['yml/file1.yaml', 'yml/file2.yaml'],
+  ['file1.json', 'file2.json'],
+  ['file1.yml', 'file2.yml'],
+  ['file1.yaml', 'file2.yaml'],
 ])('Stylish formatter', (f1, f2) => {
   const file1 = getFixturePath(f1);
-  console.log(file1);
   const file2 = getFixturePath(f2);
-  const result = readFile('results.txt');
+  const result = readFile('result_stylish.txt');
   expect(genDiff(file1, file2)).toEqual(result);
 });
 
 test.each([
-  ['json/file1.json', 'json/file2.json'],
-  ['yml/file1.yml', 'yml/file2.yml'],
-  ['yml/file1.yaml', 'yml/file2.yaml'],
+  ['file1.json', 'file2.json'],
+  ['file1.yml', 'file2.yml'],
+  ['file1.yaml', 'file2.yaml'],
 ])('Plain formatter', (f1, f2) => {
   const file1 = getFixturePath(f1);
   const file2 = getFixturePath(f2);
-  const result = readFile('plain_results.txt');
+  const result = readFile('result_plain.txt');
   expect(genDiff(file1, file2, 'plain')).toEqual(result);
 });
 
 test.each([
-  ['json/file1.json', 'json/file2.json'],
-  ['yml/file1.yml', 'yml/file2.yml'],
-  ['yml/file1.yaml', 'yml/file2.yaml'],
-])('Stylish formatter', (f1, f2) => {
+  ['file1.json', 'file2.json'],
+  ['file1.yml', 'file2.yml'],
+  ['file1.yaml', 'file2.yaml'],
+])('Json formatter', (f1, f2) => {
   const file1 = getFixturePath(f1);
   const file2 = getFixturePath(f2);
-  const result = readFile('json_results.txt');
+  const result = readFile('result_json.txt');
   expect(genDiff(file1, file2, 'json')).toEqual(result);
 });
