@@ -1,7 +1,7 @@
 import { test, expect } from '@jest/globals';
 import { fileURLToPath } from 'url';
 import path, { dirname } from 'path';
-import fs from 'fs';
+import fs, { copyFileSync } from 'fs';
 import genDiff from '../src/gendiff.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -16,6 +16,7 @@ test.each([
   ['yml/file1.yaml', 'yml/file2.yaml'],
 ])('Stylish formatter', (f1, f2) => {
   const file1 = getFixturePath(f1);
+  console.log(file1);
   const file2 = getFixturePath(f2);
   const result = readFile('results.txt');
   expect(genDiff(file1, file2)).toEqual(result);
